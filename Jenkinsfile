@@ -9,8 +9,19 @@ pipeline {
     }
 
     stage('Logs') {
-      steps {
-        sh 'ls -la'
+      parallel {
+        stage('Logs') {
+          steps {
+            sh 'ls -la'
+          }
+        }
+
+        stage('RunTests') {
+          steps {
+            sh 'cd customer-service && mvn test'
+          }
+        }
+
       }
     }
 
