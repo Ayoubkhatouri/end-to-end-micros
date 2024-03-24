@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Log') {
+    stage('Checkout Code') {
       steps {
         sh 'ls -la'
       }
