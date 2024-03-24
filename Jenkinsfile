@@ -18,7 +18,7 @@ pipeline {
 
         stage('RunTests') {
           steps {
-            sh 'cd customer-service && mvn test'
+            sh 'cd customer-service && mvn test'
           }
         }
 
