@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+    maven '3.9.6'
+  }
   stages {
     stage('check mvn') {
       steps {
@@ -14,8 +17,7 @@ pipeline {
       }
     }
 
-    stage('Logs') {
-      parallel {
+      
         stage('Logs') {
           steps {
             sh 'ls -la'
@@ -26,13 +28,8 @@ pipeline {
           steps {
             sh 'cd customer-service && mvn test'
           }
-        }
-
-      }
     }
 
   }
-  tools {
-    maven '3.9.6'
-  }
+
 }
