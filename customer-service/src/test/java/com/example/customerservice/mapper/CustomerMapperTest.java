@@ -14,7 +14,7 @@ class CustomerMapperTest {
     //comment
     @Test
     public void shouldMapCustomerToCustomerDTO() {
-        Customer givenCustomer = Customer.builder().id(1L).lastName("ayoub").firstName("khatouri").email("ayoub@gmail.com").build();
+        Customer givenCustomer = Customer.builder().id(1L).lastName("ayou").firstName("khatouri").email("ayoub@gmail.com").build();
         CustomerDTO expected = CustomerDTO.builder().id(1L).lastName("ayoub").firstName("khatouri").email("ayoub@gmail.com").build();
 
         CustomerDTO result = underTest.fromCustomer(givenCustomer);
