@@ -1,14 +1,12 @@
 pipeline {
   agent any
-  tools {
-        maven '3.9.6'
-  }
   stages {
-    stage('check mvn'){
+    stage('check mvn') {
       steps {
         sh 'mvn -version'
       }
     }
+
     stage('Checkout Code') {
       steps {
         sh 'ls -la'
@@ -33,5 +31,8 @@ pipeline {
       }
     }
 
+  }
+  tools {
+    maven '3.9.6'
   }
 }
